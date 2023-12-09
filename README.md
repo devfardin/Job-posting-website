@@ -1,6 +1,6 @@
 # Upwork 
 
-## [Website Live Link](https://hero-assingnment-011.netlify.app/) 
+## [Website Live Link](https://job-posting-upwork.netlify.app) 
 
 ### Website features
 
