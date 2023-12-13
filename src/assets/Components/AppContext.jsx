@@ -48,6 +48,11 @@ const AppContext = ({ children }) => {
     setLoading(true)
     return signInWithPopup(Auth, googleProvider)
   }
+
+  const handleFacebook = (FacebookProvider) => {
+    setLoading(true)
+    return signInWithPopup(Auth, FacebookProvider)
+  }
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(Auth, currentUser => {
       setUser(currentUser)
@@ -56,7 +61,7 @@ const AppContext = ({ children }) => {
     return () => { unSubscribe() }
   },[])
 
-  const contextInfo = { user, loading,createUser,  handelGoogle, userLogOut, userSignIn, updateUser, jobs }
+  const contextInfo = { user, loading,createUser,  handelGoogle, userLogOut, userSignIn, updateUser, jobs, handleFacebook }
 
   return (
     <contextProvider.Provider value={contextInfo}>

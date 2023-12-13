@@ -6,6 +6,7 @@ import { contextProvider } from '../Components/AppContext';
 import { GoogleAuthProvider } from 'firebase/auth';
 import swal from 'sweetalert';
 import { Helmet } from "react-helmet-async"
+import SocialLogin from '../Components/LoginWithSocial/SocialLogin';
 
 
 const Login = () => {
@@ -81,12 +82,7 @@ const Login = () => {
                             <div class="flex-grow border-t border"></div>
                         </div>
 
-                        <div onClick={haldelGoogle} className='border border-primery rounded-full cursor-pointer px-3 py-3 grid grid-cols-6 items-center'>
-                            <div className='justify-center items-center bg-none'>
-                                <FcGoogle className='text-secondary text-4xl '></FcGoogle>
-                            </div>
-                            <h1 className='text-lg font-normal col-span-4 text-center text-gray1'> Continue with Google</h1>
-                        </div>
+                       <SocialLogin/>
                     </div>
                 </div>
             </div>

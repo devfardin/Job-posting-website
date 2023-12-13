@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom'
 import { PiEyeSlash, PiEye } from 'react-icons/pi';
 import { contextProvider } from '../Components/AppContext';
 import swal from 'sweetalert';
-import { GoogleAuthProvider } from 'firebase/auth';
-import { FcGoogle } from 'react-icons/fc';
 import { Helmet } from "react-helmet-async"
+import SocialLogin from '../Components/LoginWithSocial/SocialLogin';
 
 const Register = () => {
-    const { handelGoogle, updateUser, createUser } = useContext(contextProvider)
+    const { updateUser, createUser } = useContext(contextProvider)
     const [showPassword, setShowPassword] = useState(false)
     const [registrationError, setRegistrationError] = useState('')
-    const googleProvider = new GoogleAuthProvider
     const validation = {
         'capital': /[A-Z]/,
         'spacelSymble': /[\W_]+/,
@@ -52,18 +50,7 @@ const Register = () => {
                 return
             })
     }
-    const haldelGoogle = () => {
-        handelGoogle(googleProvider)
-            .then(() => {
-                swal("success", "Account successfully created. You can now log in.", "success");
-                return
-            })
-            .catch((error) => {
-                swal("Account creation failed", " Please check your information and try again.", "error");
-                console.log(error);
-                return
-            })
-    }
+
     return (
         <div className='bg-sectionbg py-14'>
              <Helmet>
@@ -110,12 +97,7 @@ const Register = () => {
                             <div class="flex-grow border-t border"></div>
                         </div>
 
-                        <div onClick={haldelGoogle} className='border border-primery rounded-full cursor-pointer px-3 py-3 grid grid-cols-6 items-center'>
-                            <div className='justify-center items-center bg-none'>
-                                <FcGoogle className='text-secondary text-4xl '></FcGoogle>
-                            </div>
-                            <h1 className='text-lg font-normal col-span-4 text-center text-gray1'> Continue with Google</h1>
-                        </div>
+                       <SocialLogin/>
                     </div>
                 </div>
             </div>
