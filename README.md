@@ -8,7 +8,7 @@
 
 - Job Posting and Application System: Enable users to browse and apply for job postings. Job applicants can use their account balance to apply for jobs, with an initial "Pending" status, and they can check the status updates as job posters change them.
 
-- Job Posting and Management: Users can post job listings for free, providing essential details, and receive success messages upon successful posting. In the "My Posted Jobs" page, job posters can edit or delete their listings and view their active postings.
+- Job Posting and Management: Users can post job listings for free, provide essential details, and receive success messages upon successful posting. In the "My Posted Jobs" page, job posters can edit or delete their listings and view their active postings.
 
 - Job Completion and Interaction: Implement the "Complete" button for job applicants when the job status changes to "In Progress." The button should hide after the action is taken, indicating that the job is completed or in progress.
 
